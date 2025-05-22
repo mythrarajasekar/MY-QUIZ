@@ -1,0 +1,60 @@
+:root {
+  --primary: #121212;       /* Deep black background */
+  --secondary: #ff4081;     /* Hot pink accent */
+  --success: #4caf50;       /* Green for success */
+  --info: #00acc1;          /* Cyan for info */
+  --warning: #ffa726;       /* Amber for warning */
+  --danger: #ef5350;        /* Soft red for danger */
+  --light: #2a2a2a;         /* Dark gray for UI panels */
+  --dark: #000000;          /* Pure black */
+}
+
+/* Background utilities */
+.bg-primary {
+  background-color: var(--primary) !important;
+}
+
+.bg-white {
+  background-color: #121212 !important; /* Dark background instead of white */
+}
+
+.bg-success {
+  background-color: var(--success) !important;
+}
+
+.bg-error {
+  background-color: var(--warning) !important;
+}
+
+.bg-dark {
+  background-color: var(--dark) !important;
+}
+
+/* Text utilities */
+.text-white {
+  color: #ffffff !important;  /* White text on dark bg */
+}
+
+.text-muted {
+  color: #999999 !important;  /* Muted light gray */
+}
+
+/* Borders */
+.border-light {
+  border: 1px solid #333333;  /* Dark gray border */
+}
+
+body.dark {
+  background-color: #1c1c1c;
+  color: white;
+}
+
+body.light {
+  background-color: #ffffff;
+  color: #111;
+}
+
+body.pink {
+  background: linear-gradient(to right, #ff6ec4, #7873f5);
+  color: #000;
+}

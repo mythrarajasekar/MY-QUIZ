@@ -1,0 +1,76 @@
+import React, { useState } from "react";
+import axios from "axios";
+
+function Quiz({ examId, userId, questions }) {
+  // Store selected options for each question
+  // Example: { questionId1: "A", questionId2: "C", ... }
+  const [answers, setAnswers] = useState({});
+
+  const handleOptionChange = (questionId, selectedOption) => {
+    setAnswers((prev) => ({
+      ...prev,
+      [questionId]: selectedOption,
+    }));
+  };
+
+  const handleSubmit = async () => {
+    try {
+      // Prepare answers array as expected by backend
+      const answersArray = Object.entries(answers).map(([question, selectedOption]) => ({
+        question,
+        selectedOption,
+      }));
+
+      const response = await axios.post(
+        "/api/reports/add-report",
+        {
+          exam: examId,
+          user: userId,
+          answers: answersArray,
+        },
+        {
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem("token")}`, // assuming token in localStorage
+          },
+        }
+      );
+
+      if (response.data.success) {
+        alert(`Result: ${response.data.data.result.verdict}\nScore: ${response.data.data.result.score}/${response.data.data.result.totalQuestions}`);
+        console.log("Full report:", response.data.data);
+      } else {
+        alert("Failed to submit report: " + response.data.message);
+      }
+    } catch (error) {
+      console.error("Error submitting report:", error);
+      alert("Something went wrong while submitting your answers.");
+    }
+  };
+
+  return (
+    <div>
+      <h2>Quiz</h2>
+      {questions.map((question) => (
+        <div key={question._id} style={{ marginBottom: 20 }}>
+          <p>{question.name}</p>
+          {Object.entries(question.options).map(([optionKey, optionValue]) => (
+            <label key={optionKey} style={{ display: "block" }}>
+              <input
+                type="radio"
+                name={question._id}
+                value={optionKey}
+                checked={answers[question._id] === optionKey}
+                onChange={() => handleOptionChange(question._id, optionKey)}
+              />
+              {optionValue}
+            </label>
+          ))}
+        </div>
+      ))}
+
+      <button onClick={handleSubmit}>Submit Quiz</button>
+    </div>
+  );
+}
+
+export default Quiz;

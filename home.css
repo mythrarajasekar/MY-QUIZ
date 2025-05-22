@@ -1,0 +1,74 @@
+.home-container {
+  padding: 2rem;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(to right, #6e6e6e, #514f52); /* Dark gradient background */
+  min-height: 100vh;
+  color: #f0f0f0; /* Default light text */
+}
+
+.home-title {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+  color: #ff4d88; /* Highlight color */
+  text-align: center;
+}
+
+.exam-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+
+.exam-card {
+  background: linear-gradient(180deg, #2a2a2a, #1a1a1a); /* Dark card */
+  border-radius: 1rem;
+  padding: 1.5rem;
+  box-shadow: 0 8px 20px rgba(255, 255, 255, 0.05);
+  transition: transform 0.2s ease-in-out;
+}
+
+.exam-card:hover {
+  transform: translateY(-5px);
+}
+
+.exam-card h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #ff4d88; /* Accent title */
+  margin-bottom: 1rem;
+}
+
+.exam-card p {
+  font-size: 1rem;
+  margin: 0.4rem 0;
+  color: #ccc; /* Light gray text */
+}
+
+.exam-card span {
+  font-weight: 600;
+  color: #f0f0f0;
+}
+
+.exam-btn {
+  margin-top: 1rem;
+  background-color: #ff4d88;
+  color: white;
+  border: none;
+  padding: 0.6rem 1rem;
+  font-size: 1rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  width: 100%;
+  transition: background-color 0.3s;
+}
+
+.exam-btn:hover {
+  background-color: #d9366e;
+}
+
+.exam-btn.disabled {
+  background-color: #555;
+  cursor: not-allowed;
+}
+

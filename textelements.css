@@ -1,0 +1,60 @@
+.text-2xl {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  color: #ffffff;
+}
+.text-xl {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  color: #000000;
+}
+.text-lg {
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  color: #000000;
+}
+.text-md {
+  font-size: 1rem;
+  line-height: 1.25rem;
+  color: #000000;
+}
+.text-sm {
+  font-size: 0.875rem;
+  line-height: 1rem;
+  color: #000000;
+}
+.text-xs {
+  font-size: 0.75rem;
+  line-height: 0.875rem;
+  color: #000000;
+}
+
+h1 {
+  margin-bottom: 0px !important;
+  padding-bottom: 0 !important;
+  color: #000000;
+}
+
+.text-center {
+  text-align: center;
+}
+
+a {
+  color: #66ccff !important; /* Neon cyan for dark themes */
+  text-decoration: none;
+}
+
+a:hover {
+  color: #a4e9f4 !important;
+  text-decoration: underline !important;
+}
+
+i {
+  font-size: 18px !important;
+  cursor: pointer !important;
+  color: #ffffff;
+}
+
+.underline {
+  text-decoration: underline !important;
+}

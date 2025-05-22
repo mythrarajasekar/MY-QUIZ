@@ -1,0 +1,26 @@
+.music-toggle-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  font-size: 28px;
+  background: rgba(0, 0, 0, 0.85); /* Dark background */
+  color: white;
+  border-radius: 50%;
+  padding: 12px;
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1); /* Light shadow for contrast */
+  cursor: pointer;
+  z-index: 999;
+  transition: background 0.3s ease, transform 0.2s;
+}
+
+.music-toggle-button:hover {
+  background: rgba(255, 255, 255, 0.1); /* Slight glow on hover */
+  transform: scale(1.1);
+}
+.music-toggle-button {
+  /* existing styles... */
+  box-shadow:
+    0 0 10px rgba(255, 255, 255, 0.05),
+    0 0 20px rgba(255, 255, 255, 0.05),
+    0 0 30px rgba(255, 0, 150, 0.2); /* pink/purple Kahoot-style glow */
+}
